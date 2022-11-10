@@ -3,10 +3,16 @@ import styles from './Card.module.css'
 
 const Card = () => {
 
+  const statusArr = ['soft', 'moderate', 'hard'];
+
   const [weight, setWeight] = useState(10);
   const [sets, setSets] = useState(3);
   const [reps, setReps] = useState(12);
-  const [status, setStatus] = useState(['soft', 'moderate', 'hard']);
+  const [status, setStatus] = useState(statusArr[1]);
+
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setStatus(statusArr[e.target.selectedIndex]);
+  };
 
   return (
     <div className={styles.card}>
@@ -51,8 +57,8 @@ const Card = () => {
       </div>
 
       <div className={styles.block}>
-        <select className={styles.statusSelect} defaultValue="moderate" onChange={(e) => setStatus(e.target.value)}>
-          {status.map(values => <option key={values}>{values}</option>)}
+        <select className={styles.statusSelect} value={status} onChange={handleSelectChange}>
+          {statusArr.map(values => <option key={values}>{values}</option>)}
         </select>
         <label className={styles.statusLabel}>status</label>
       </div>
