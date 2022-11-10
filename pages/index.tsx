@@ -69,6 +69,7 @@ export default function Home() {
         <title>Montanha Workout</title>
         <meta name="description" content="Montanha Workout" />
         <link rel="icon" href="/favicon.ico" />
+        <link href="https://fonts.cdnfonts.com/css/menlo" rel="stylesheet"></link>
       </Head>
 
       <main className={styles.main}>
