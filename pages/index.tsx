@@ -2,6 +2,8 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
 import Card from '../components/Card'
+import { GetStaticProps } from 'next';
+import { getExercises } from '../lib/exercises';
 
 const legs = [
   {
@@ -62,7 +64,7 @@ const legs = [
   },
 ];
 
-export default function Home() {
+export default function Home({ exercises }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -73,8 +75,19 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        { legs.map(exercise => <Card key={exercise.name} exercise={exercise} />)}
+        { exercises.map(exercise => <Card key={exercise.name} exercise={exercise} />)}
       </main>
     </div>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const exercises = await getExercises();
+  console.log(exercises);
+  return {
+    props: {
+      exercises
+    },
+    revalidate: 5,
+  }
 }
