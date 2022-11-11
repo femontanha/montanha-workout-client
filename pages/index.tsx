@@ -5,66 +5,11 @@ import Card from '../components/Card'
 import { GetStaticProps } from 'next';
 import { getExercises } from '../lib/exercises';
 
-const legs = [
-  {
-    name: 'Cadeira Flexora',
-    sets: 3,
-    reps: 12,
-    weight: 59,
-    unit: 'kg',
-    status: 'moderate',
-  },
-  {
-    name: 'Mesa Flexora',
-    sets: 3,
-    reps: 12,
-    weight: 45,
-    unit: 'kg',
-    status: 'moderate',
-  },
-  {
-    name: 'Cadeira Extensora',
-    sets: 4,
-    reps: 12,
-    weight: 66,
-    unit: 'kg',
-    status: 'moderate',
-  },
-  {
-    name: 'Panturrilha Sentado',
-    sets: 4,
-    reps: 15,
-    weight: 107,
-    unit: 'kg',
-    status: 'moderate',
-  },
-  {
-    name: 'Leg Press Sentado',
-    sets: 3,
-    reps: 15,
-    weight: 127,
-    unit: 'kg',
-    status: 'moderate',
-  },
-  {
-    name: 'Cadeira Adutora',
-    sets: 3,
-    reps: 15,
-    weight: 66,
-    unit: 'kg',
-    status: 'moderate',
-  },
-  {
-    name: 'Cadeira Abdutora',
-    sets: 3,
-    reps: 15,
-    weight: 66,
-    unit: 'kg',
-    status: 'moderate',
-  },
-];
+type HomeProps = {
+  exercises: []
+}
 
-export default function Home({ exercises }) {
+const Home: React.FC<HomeProps> = (props: HomeProps) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -75,7 +20,7 @@ export default function Home({ exercises }) {
       </Head>
 
       <main className={styles.main}>
-        { exercises.map(exercise => <Card key={exercise.name} exercise={exercise} />)}
+        { props.exercises.map((card, i) => <Card key={i} card={card} />)}
       </main>
     </div>
   )
@@ -91,3 +36,5 @@ export const getStaticProps: GetStaticProps = async () => {
     revalidate: 5,
   }
 }
+
+export default Home;

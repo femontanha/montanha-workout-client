@@ -1,7 +1,7 @@
 import { useState, useId } from 'react'
 import styles from './Card.module.css'
 
-type ExerciseProps = {
+type CardProps = {
   name: string;
   sets: number;
   reps: number;
@@ -10,14 +10,13 @@ type ExerciseProps = {
   status: string;
 }
 
-const Card = ({exercise}: {exercise: ExerciseProps}) => {
-
+const Card = ({card}: {card: CardProps}) => {
   const statusArr = ['soft', 'moderate', 'hard'];
 
-  const [weight, setWeight] = useState(exercise.weight);
-  const [sets, setSets] = useState(exercise.sets);
-  const [reps, setReps] = useState(exercise.reps);
-  const [status, setStatus] = useState(exercise.status);
+  const [weight, setWeight] = useState(card.weight);
+  const [sets, setSets] = useState(card.sets);
+  const [reps, setReps] = useState(card.reps);
+  const [status, setStatus] = useState(card.status);
 
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setStatus(statusArr[e.target.selectedIndex]);
@@ -26,7 +25,7 @@ const Card = ({exercise}: {exercise: ExerciseProps}) => {
   return (
     <div className={styles.card}>
       <h2 className={styles.title}>
-        {exercise.name}
+        {card.name}
       </h2>
 
       <div className={styles.block}>
@@ -38,7 +37,7 @@ const Card = ({exercise}: {exercise: ExerciseProps}) => {
           readOnly
         />
         <button className={styles.button} onClick={() => setWeight(weight + 1)}>+</button>
-        <div className={styles.unit}>{exercise.unit}</div>
+        <div className={styles.unit}>{card.unit}</div>
       </div>
 
       <div className={styles.block}>
