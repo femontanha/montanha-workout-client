@@ -17,5 +17,5 @@ model Exercise {
   weight Int
   unit   String
   status String
-  type String
+  type String?
 }
