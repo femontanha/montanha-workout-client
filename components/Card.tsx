@@ -8,6 +8,7 @@ type CardProps = {
   weight: number;
   unit: string;
   status: string;
+  type: string;
 }
 
 const Card = ({card}: {card: CardProps}) => {
