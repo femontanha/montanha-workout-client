@@ -28,7 +28,6 @@ const Home: React.FC<HomeProps> = (props: HomeProps) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const exercises = await getExercises();
-  console.log(exercises);
   return {
     props: {
       exercises

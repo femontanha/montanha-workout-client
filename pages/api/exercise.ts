@@ -39,6 +39,7 @@ async function createExercise(req: NextApiRequest, res: NextApiResponse) {
         weight: body.weight,
         unit: body.unit,
         status: body.status,
+        type: body.type,
       }
     })
     return res.status(200).json({
