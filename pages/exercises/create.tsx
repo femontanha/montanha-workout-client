@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import axios from 'axios'
-import { createExercise } from '../../lib/exercises'
 
 const CreateExercise = () => {
   const [name, setName] = useState('');

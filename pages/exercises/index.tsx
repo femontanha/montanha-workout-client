@@ -12,7 +12,7 @@ type ExercisesPageProps = {
 }
 
 const ExercisesPage: React.FC<ExercisesPageProps> = (props: ExercisesPageProps) => {
-  const pushTrainingFiltered = props.exercises.filter((exercise: IExercise) => exercise.type === 'triceps' || exercise.type === 'chest' || exercise.type === 'shoulders');
+  const pushTrainingFiltered = props.exercises.filter((exercise: IExercise) => exercise.type === 'triceps' || exercise.type === 'chest' || exercise.type === 'shoulder');
   const pullTrainingFiltered = props.exercises.filter((exercise: IExercise) => exercise.type === 'biceps' || exercise.type === 'back');
   const legsTrainingFiltered = props.exercises.filter((exercise: IExercise) => exercise.type === 'legs');
 
