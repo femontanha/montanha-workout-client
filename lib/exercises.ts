@@ -18,13 +18,13 @@ export async function getExercises() {
   return exercises;
 }
 
-export async function getExerciseById(id) {
-  const exercises = await prisma.exercise.findUnique({
+export async function getExerciseById(id: string) {
+  const exercise = await prisma.exercise.findUnique({
     where: {
       id: parseFloat(id),
     },
   });
-  return exercises;
+  return exercise;
 }
 
 export async function createExercise(data: IExercise) {
