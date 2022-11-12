@@ -1,4 +1,4 @@
-import { useState, useId } from 'react'
+import { useState } from 'react'
 import styles from './Card.module.css'
 
 type CardProps = {

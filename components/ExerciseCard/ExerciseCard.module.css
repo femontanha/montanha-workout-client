@@ -1,0 +1,42 @@
+.card {
+  border: #ADC2FF 2px solid;
+  padding: 12px;
+  border-radius: 4px;
+}
+
+.head,
+.body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 14px;
+}
+
+.repsAndSets {
+  background-color: #ADC2FF;
+  padding: 4px;
+}
+
+.sets,
+.reps,
+.divisor {
+  font-size: 16px;
+  margin: 0 4px;
+  font-weight: 400;
+}
+
+.weight {
+  font-size: 24px;
+}
+
+.statusText {
+  font-size: 14px;
+}
+
+.status {
+  background-color: #ADC2FF;
+  padding: 4px;
+}

@@ -1,15 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
-import Card from '../components/Card'
-import { GetStaticProps } from 'next';
-import { getExercises } from '../lib/exercises';
-
-type HomeProps = {
-  exercises: []
-}
-
-const Home: React.FC<HomeProps> = (props: HomeProps) => {
+const Home: React.FC = () => {
   return (
     <div className={styles.container}>
       <Head>
@@ -20,20 +12,10 @@ const Home: React.FC<HomeProps> = (props: HomeProps) => {
       </Head>
 
       <main className={styles.main}>
-        { props.exercises.map((card, i) => <Card key={i} card={card} />)}
+        Home
       </main>
     </div>
   )
-}
-
-export const getStaticProps: GetStaticProps = async () => {
-  const exercises = await getExercises();
-  return {
-    props: {
-      exercises
-    },
-    revalidate: 5,
-  }
 }
 
 export default Home;
