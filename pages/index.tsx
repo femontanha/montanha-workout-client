@@ -5,12 +5,8 @@ const Home: React.FC = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Montanha Workout</title>
-        <meta name="description" content="Montanha Workout" />
-        <link rel="icon" href="/favicon.ico" />
-        <link href="https://fonts.cdnfonts.com/css/menlo" rel="stylesheet"></link>
+        <title>Montanha&apos;s Workout</title>
       </Head>
-
       <main className={styles.main}>
         Home
       </main>

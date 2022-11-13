@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { useState } from 'react'
 import classNames from 'classnames/bind';
 import ExerciseCard from '../../components/ExerciseCard'
@@ -46,6 +47,9 @@ const ExercisesPage: React.FC<ExercisesPageProps> = (props: ExercisesPageProps) 
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Exercises - Montanha&apos;s Workout</title>
+      </Head>
       <h1>Montanha&apos;s Workout Routine</h1>
       <div className={styles.filterBlock}>
         <p className={styles.filterText}>Filter by Training:</p>
