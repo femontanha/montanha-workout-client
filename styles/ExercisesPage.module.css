@@ -12,14 +12,13 @@
 }
 
 .filterBlock {
-  display: flex;
-  align-items: center;
   margin-bottom: 16px;
 }
 
 .filterButtonWrap {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 8px;
 }
 
@@ -29,8 +28,6 @@
 }
 
 .filterButton {
-  padding-right: 16px;
-  padding-left: 16px;
   line-height: 32px;
   height: 32px;
   transition: box-shadow 80ms ease-in-out;
@@ -44,6 +41,9 @@
   align-items: center;
   outline: none;
   border: 1px solid #c1c4d6;
+  text-transform: capitalize;
+  width: 80px;
+  justify-content: center;
 }
 
 .filterButton:hover,
