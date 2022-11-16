@@ -28,7 +28,7 @@ const Exercise = ({ exercise }: { exercise: IExercise }) => {
   const exerciseTypes = ['triceps', 'chest', 'shoulders', 'biceps', 'back', 'legs'];
   const exerciseStatus = ['soft', 'moderate', 'hard'];
 
-  const handleUpdate = async (e: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleUpdate = async (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
     await axios.put('/api/exercise', {
       id: Number(id),
@@ -43,7 +43,7 @@ const Exercise = ({ exercise }: { exercise: IExercise }) => {
     router.push('/exercises');
   }
 
-  const handleDelete = async (e: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleDelete = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     await axios.delete('/api/exercise', { data: {id: Number(id) }});
     router.push('/exercises');
@@ -55,7 +55,7 @@ const Exercise = ({ exercise }: { exercise: IExercise }) => {
         <title>Editing - Montanha&apos;s Workout</title>
       </Head>
       <h2>Editing - {exercise.name}</h2>
-      <form>
+      <form onSubmit={handleUpdate}>
         <div className={styles.formGroup}>
           <label className={styles.inputLabel}>Name</label>
           <input type="text" className={styles.input} name="name" value={name} onChange={(e) => setName(e.target.value)} />
@@ -89,7 +89,7 @@ const Exercise = ({ exercise }: { exercise: IExercise }) => {
           </select>
         </div>
         <div className={styles.wrapButtons}>
-          <button className={styles.button} onClick={handleUpdate}>Update</button>
+          <button type="submit" className={styles.button}>Update</button>
           <Link href="/exercises">
             <button className={cancelButtonCSS}>Cancel</button>
           </Link>
