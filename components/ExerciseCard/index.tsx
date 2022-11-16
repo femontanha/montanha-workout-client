@@ -1,4 +1,3 @@
-// import Link from 'next/link'
 import styles from './ExerciseCard.module.css'
 import { IExercise } from '../../lib/exercises'
 
@@ -25,7 +24,6 @@ const ExerciseCard = ({ exercise }: { exercise: IExercise}) => {
           Effort: <span className={styles.status}>{exercise.status}</span>
         </p>
       </div>
-      {/* <Link href={{ pathname: '/exercises/[id]', query: { id: exercise.id } }} as="/exercises/[id]">------------Edit-----------</Link> */}
     </div>
   )
 }

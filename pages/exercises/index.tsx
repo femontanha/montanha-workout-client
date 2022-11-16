@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import { useState } from 'react'
 import classNames from 'classnames/bind';
 import ExerciseCard from '../../components/ExerciseCard'
@@ -90,7 +91,9 @@ const ExercisesPage: React.FC<ExercisesPageProps> = (props: ExercisesPageProps) 
       </div>
       <div className={styles.grid}>
         {filteredExercises.map((exercise: IExercise) => (
-          <ExerciseCard key={exercise.id} exercise={exercise} />
+          <Link key={exercise.id} href={{ pathname: '/exercises/[id]', query: { id: exercise.id } }} as="/exercises/[id]">
+            <ExerciseCard exercise={exercise} />
+          </Link>
         ))}
       </div>
     </div>

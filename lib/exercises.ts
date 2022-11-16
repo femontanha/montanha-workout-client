@@ -33,3 +33,12 @@ export async function createExercise(data: IExercise) {
   });
   return newEntry;
 }
+
+export async function updateExercise(data: IExercise) {
+  const { id } = data;
+  const newEntry = await prisma.exercise.update({
+    where: { id },
+    data,
+  });
+  return newEntry;
+}
