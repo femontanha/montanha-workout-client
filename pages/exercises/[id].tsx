@@ -28,9 +28,9 @@ const Exercise = ({ exercise }: { exercise: IExercise }) => {
   const exerciseTypes = ['triceps', 'chest', 'shoulders', 'biceps', 'back', 'legs'];
   const exerciseStatus = ['soft', 'moderate', 'hard'];
 
-  const handleUpdate = async (e) => {
+  const handleUpdate = async (e: React.ChangeEvent<HTMLSelectElement>) => {
     e.preventDefault();
-    const response = await axios.put('/api/exercise', {
+    await axios.put('/api/exercise', {
       id: Number(id),
       name,
       sets,
@@ -40,7 +40,13 @@ const Exercise = ({ exercise }: { exercise: IExercise }) => {
       status,
       type,
     });
-    console.log('put method', response.data);
+    router.push('/exercises');
+  }
+
+  const handleDelete = async (e: React.ChangeEvent<HTMLSelectElement>) => {
+    e.preventDefault();
+    await axios.delete('/api/exercise', { data: {id: Number(id) }});
+    router.push('/exercises');
   }
 
   return (
@@ -87,6 +93,7 @@ const Exercise = ({ exercise }: { exercise: IExercise }) => {
           <Link href="/exercises">
             <button className={cancelButtonCSS}>Cancel</button>
           </Link>
+          <button className={styles.button} onClick={handleDelete}>Delete</button>
         </div>
       </form>
     </div>

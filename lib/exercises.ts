@@ -42,3 +42,10 @@ export async function updateExercise(data: IExercise) {
   });
   return newEntry;
 }
+
+export async function removeExercise(id: number) {
+  const newEntry = await prisma.exercise.delete({
+    where: { id },
+  });
+  return newEntry;
+}

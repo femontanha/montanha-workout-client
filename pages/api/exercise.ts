@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import { getExercises, createExercise, updateExercise } from '../../lib/exercises'
+import { getExercises, createExercise, updateExercise, removeExercise } from '../../lib/exercises'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { method } = req;
@@ -11,9 +11,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return await create(req, res);
     case 'PUT':
       return await update(req, res);
-      break
     case 'DELETE':
-      break
+      return await deleteExercise(req, res);
     default:
       return res.status(405).json({ message: 'Method not allowed', success: false })
   }
@@ -49,6 +48,17 @@ async function update(req: NextApiRequest, res: NextApiResponse) {
   const body = req.body
   try {
     const newEntry = await updateExercise(body);
+    return res.status(200).json(newEntry);
+  } catch (error) {
+    console.error('Request error', error)
+    res.status(500).json({ error: 'Error creating exercise', success: false })
+  }
+}
+
+async function deleteExercise(req: NextApiRequest, res: NextApiResponse) {
+  const body = req.body
+  try {
+    const newEntry = await removeExercise(body.id);
     return res.status(200).json(newEntry);
   } catch (error) {
     console.error('Request error', error)
