@@ -8,7 +8,6 @@ import { TbSmartHome } from 'react-icons/tb'
 
 const MainNav: React.FC = () => {
   const router = useRouter()
-  console.log(router.pathname)
 
   return (
     <nav className={styles.navigation}>
