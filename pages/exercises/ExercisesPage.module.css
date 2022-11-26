@@ -1,0 +1,33 @@
+.page {
+  background-color: var(--color-darken20);
+}
+
+.item {
+  border-top: rgba(255,255,255, 0.1) 1px solid;
+  padding: 8px 16px;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.itemInfoLeft,
+.itemInfoRight {
+  width: 50%;
+}
+
+.itemInfoRight {
+  text-align: right;
+}
+
+.name {
+  color: #FFF;
+  font-weight: 700;
+}
+
+.volume {
+  color: var(--color-primary);
+}
+
+.status{
+  color: var(--color-secondary);
+}
