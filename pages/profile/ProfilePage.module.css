@@ -1,0 +1,32 @@
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 32px 0;
+  height: calc(100vh - 180px);
+}
+
+.painel {
+  background: linear-gradient(0.25turn, var(--color-darken30), var(--color-darken20));
+  border-radius: 8px;
+  width: 100%;
+  display: flex;
+  padding: 16px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profilePic {
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  border: var(--color-darken30) 5px solid;
+}
+
+.profileName {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 16px 0 0;
+}

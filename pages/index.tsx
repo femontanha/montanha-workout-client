@@ -1,11 +1,11 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import styles from './Home.module.css'
 
 const Home: React.FC = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Montanha&apos;s Workout</title>
+        <title>femontanha workout</title>
       </Head>
       <main className={styles.main}>
         Home

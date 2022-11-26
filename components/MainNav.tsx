@@ -4,6 +4,7 @@ import styles from './MainNav.module.css'
 import { IoIosFitness } from 'react-icons/io'
 import { BsListTask } from 'react-icons/bs'
 import { BiUser } from 'react-icons/bi'
+import { TbSmartHome } from 'react-icons/tb'
 
 const MainNav: React.FC = () => {
   const router = useRouter()
@@ -12,6 +13,12 @@ const MainNav: React.FC = () => {
   return (
     <nav className={styles.navigation}>
       <ul className={styles.list}>
+      <li className={styles.item}>
+          <Link className={router.pathname == "/" ? styles.linkActive : styles.link} href="/">
+            <TbSmartHome />
+            <span className={styles.itemName}>Home</span>
+          </Link>
+        </li>
         <li className={styles.item}>
           <Link className={router.pathname == "/exercises" ? styles.linkActive : styles.link} href="/exercises">
             <IoIosFitness />
@@ -25,7 +32,7 @@ const MainNav: React.FC = () => {
           </Link>
         </li>
         <li className={styles.item}>
-          <Link className={router.pathname == "/profile" ? styles.linkActive : styles.link} href="/exercises">
+          <Link className={router.pathname == "/profile" ? styles.linkActive : styles.link} href="/profile">
             <BiUser />
             <span className={styles.itemName}>Profile</span>
           </Link>

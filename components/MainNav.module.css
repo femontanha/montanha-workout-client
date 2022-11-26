@@ -33,6 +33,11 @@
   color: var(--color-primary);
 }
 
+.linkActive .itemName {
+  color: #FFF;
+  font-weight: 700;
+}
+
 .itemName {
   margin-top: 8px;
   font-size: 12px;
