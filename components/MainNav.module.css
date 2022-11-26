@@ -22,7 +22,6 @@
 
 .link,
 .linkActive {
-  color: #a0a9b1;
   display: flex;
   flex-direction: column;
   align-items: center;

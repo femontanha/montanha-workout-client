@@ -5,6 +5,7 @@
   --color-darken30: #2f2f2f;
   --color-primary: #1bd174;
   --color-secondary: #10c2f2;
+  --color-text: #a0a9b1;
 }
 
 html,
@@ -13,7 +14,7 @@ body {
   margin: 0;
   font-family: ui-monospace, Consolas, 'Anonymous Pro', monospace;
   background-color: var(--color-dark);
-  color: #fff;
+  color: var(--color-text);
 }
 
 a {

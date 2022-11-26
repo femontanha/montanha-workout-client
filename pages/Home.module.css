@@ -1,0 +1,26 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 180px);
+}
+
+.painel {
+  background-color: var(--color-darken20);
+  border-radius: 8px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+.icon {
+  font-size: 32px;
+}
+
+.text {
+  font-size: 12px;
+  margin-top: 16px;
+}
