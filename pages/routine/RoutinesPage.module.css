@@ -1,0 +1,6 @@
+.link {
+  margin: 8px 0;
+  display: inline-flex;
+  font-size: 12px;
+  text-transform: capitalize;
+}

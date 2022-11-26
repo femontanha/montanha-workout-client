@@ -6,7 +6,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   switch (method) {
     case 'GET':
-      return await getExercise(req, res);
+      // return await getExercise(req, res);
     case 'POST':
       return await create(req, res);
     case 'PUT':
@@ -18,17 +18,17 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 }
 
-async function getExercise(req: NextApiRequest, res: NextApiResponse) {
-  try {
-    const exercises = await getExercises()
-    return res.status(200).json({
-      data: exercises,
-    });
-  } catch (error) {
-    console.log(error);
-    return res.status(500).json({ error: 'Error reading from database', success: false })
-  }
-}
+// async function getExercise(req: NextApiRequest, res: NextApiResponse) {
+//   try {
+//     const exercises = await getExercises()
+//     return res.status(200).json({
+//       data: exercises,
+//     });
+//   } catch (error) {
+//     console.log(error);
+//     return res.status(500).json({ error: 'Error reading from database', success: false })
+//   }
+// }
 
 async function create(req: NextApiRequest, res: NextApiResponse) {
   const body = req.body
