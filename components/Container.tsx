@@ -1,7 +1,7 @@
 import styles from './Container.module.css'
 
 type Props = {
-  children: JSX.Element
+  children: React.ReactNode
 }
 
 export const Container: React.FC<Props> = ({ children }) => (

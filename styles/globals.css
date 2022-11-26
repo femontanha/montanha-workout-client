@@ -1,8 +1,19 @@
+:root {
+  --color-dark: #121212;
+  --color-darken10: #1e1e1e;
+  --color-darken20: #242424;
+  --color-darken30: ##2f2f2f;
+  --color-primary: #1bd174;
+  --color-secondary: #10c2f2;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: ui-monospace, Consolas, Menlo, 'SF Mono', monospace;
+  font-family: ui-monospace, Consolas, 'Anonymous Pro', monospace;
+  background-color: var(--color-dark);
+  color: #fff;
 }
 
 a {

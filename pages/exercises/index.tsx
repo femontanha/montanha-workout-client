@@ -1,8 +1,9 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { useState } from 'react'
-import classNames from 'classnames/bind';
+import classNames from 'classnames/bind'  
 import ExerciseCard from '../../components/ExerciseCard'
+import Header from '../../components/Header'
 import { GetStaticProps } from 'next'
 import { IExercise, getExercises } from '../../lib/exercises'
 
@@ -53,28 +54,30 @@ const ExercisesPage: React.FC<ExercisesPageProps> = (props: ExercisesPageProps) 
   }
 
   return (
-    <div className={styles.container}>
+    <>
       <Head>
-        <title>Exercises - Montanha&apos;s Workout</title>
+        <title>Exercises</title>
       </Head>
-      <h1>Montanha&apos;s Workout Routine</h1>
-      <div className={styles.filterBlock}>
-        <p className={styles.filterText}>Filter by Type:</p>
-        <div className={styles.filterButtonWrap}>
-          {exercisesTypeArr.map((exerciseType) => (
-            <button key={exerciseType.name} className={exerciseType.css} onClick={exerciseType.fn}>{exerciseType.name}</button>  
+      <Header title="Exercises" />
+      <div className={styles.container}>
+        <div className={styles.filterBlock}>
+          <p className={styles.filterText}>Filter by Type:</p>
+          <div className={styles.filterButtonWrap}>
+            {exercisesTypeArr.map((exerciseType) => (
+              <button key={exerciseType.name} className={exerciseType.css} onClick={exerciseType.fn}>{exerciseType.name}</button>  
+            ))}
+            
+          </div>
+        </div>
+        <div className={styles.grid}>
+          {filteredExercises.map((exercise: IExercise) => (
+            <Link key={exercise.id} href={{ pathname: '/exercises/[id]', query: { id: exercise.id } }} as="/exercises/[id]">
+              <ExerciseCard exercise={exercise} />
+            </Link>
           ))}
-          
         </div>
       </div>
-      <div className={styles.grid}>
-        {filteredExercises.map((exercise: IExercise) => (
-          <Link key={exercise.id} href={{ pathname: '/exercises/[id]', query: { id: exercise.id } }} as="/exercises/[id]">
-            <ExerciseCard exercise={exercise} />
-          </Link>
-        ))}
-      </div>
-    </div>
+    </>
   )
 }
 
