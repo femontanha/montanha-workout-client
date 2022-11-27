@@ -4,6 +4,7 @@ import Head from 'next/head'
 import { getRoutineName, IRoutine } from '../../lib/routine'
 import { Container } from '../../components/Container'
 import Header from '../../components/Header'
+import { AiOutlineFund } from 'react-icons/ai'
 
 import styles from './RoutinesPage.module.css'
 
@@ -19,13 +20,16 @@ const RoutinesPage: React.FC<RoutinesPage> = (props: RoutinesPage) => {
         </Head>
         <Header title="Routines" />
         <Container>
-          <p>
-            Discover the routines we have to provided the best training for you
+          <p className={styles.text}>
+            Discover and choose your daily routine
           </p>
           {props.routines.map((r: IRoutine) => (
-            <div key={r.name}>
+            <div className={styles.painel} key={r.name}>
+              <AiOutlineFund className={styles.icon} />
               <Link className={styles.link} href={{ pathname: '/routines/[name]', query: { name: r.name } }} as="/routines/[name]">
-                {r.name}
+                <button className={styles.button}>
+                    {r.name} training
+                </button>
               </Link>
             </div>
           ))}

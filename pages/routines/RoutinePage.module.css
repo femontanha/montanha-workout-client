@@ -1,6 +1,42 @@
-.grid {
-  display: grid;
-  gap: 16px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  margin-bottom: 16px;
+.page {
+  background-color: var(--color-darken20);
+}
+
+.item {
+  border-top: rgba(255,255,255, 0.1) 1px solid;
+  padding: 8px 16px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.itemInfoLeft,
+.itemInfoRight {
+  width: 50%;
+}
+
+.itemInfoRight {
+  text-align: right;
+}
+
+.name,
+.type,
+.volume,
+.status {
+  margin: 8px 0;
+}
+
+.name {
+  color: #FFF;
+  font-weight: 700;
+}
+
+.volume {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.status{
+  color: var(--color-secondary);
+  font-weight: 700;
 }
