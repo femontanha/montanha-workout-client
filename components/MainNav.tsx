@@ -8,7 +8,6 @@ import { TbSmartHome } from 'react-icons/tb'
 
 const MainNav: React.FC = () => {
   const router = useRouter()
-
   return (
     <nav className={styles.navigation}>
       <ul className={styles.list}>
@@ -19,19 +18,19 @@ const MainNav: React.FC = () => {
           </Link>
         </li>
         <li className={styles.item}>
-          <Link className={router.pathname == "/exercises" ? styles.linkActive : styles.link} href="/exercises">
+          <Link className={router.pathname.includes('/exercises') ? styles.linkActive : styles.link} href="/exercises">
             <IoIosFitness />
             <span className={styles.itemName}>Exercises</span>
           </Link>
         </li>
         <li className={styles.item}>
-          <Link className={router.pathname == "/routines" ? styles.linkActive : styles.link} href="/routines">
+          <Link className={router.pathname.includes('/routines') ? styles.linkActive : styles.link} href="/routines">
             <BsListTask />
             <span className={styles.itemName}>Routines</span>
           </Link>
         </li>
         <li className={styles.item}>
-          <Link className={router.pathname == "/profile" ? styles.linkActive : styles.link} href="/profile">
+          <Link className={router.pathname.includes('/profile') ? styles.linkActive : styles.link} href="/profile">
             <BiUser />
             <span className={styles.itemName}>Profile</span>
           </Link>

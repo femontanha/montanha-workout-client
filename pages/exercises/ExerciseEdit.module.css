@@ -1,0 +1,63 @@
+.formGroup {
+  background-color: var(--color-darken20);
+  border-top: rgba(255,255,255, 0.2) 1px solid;
+  padding: 16px;
+}
+
+.inputLabel {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.input {
+  width: 100%;
+  border: 0 none;
+  background-color: transparent;
+  font-size: 14px;
+  color: #fff;
+  outline: none;
+}
+
+.select {
+  outline: none;
+  border: 0 none;
+  background-color: transparent;
+  font-size: 14px;
+  color: #fff;
+  width: 100%;
+  text-transform: capitalize;
+  margin-left: -3px;
+}
+
+.option {
+  text-transform: capitalize;
+}
+
+.wrapButtons {
+  display: flex;
+  margin: 32px 0;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 8px;
+  background-color: transparent;
+  border: rgba(255,255,255, 0.2) 1px solid;
+  color: var(--color-text);
+  padding: 8px 16px;
+}
+
+.deleteButton {
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 8px;
+  background-color: transparent;
+  border: var(--color-danger) 1px solid;
+  color: var(--color-danger);
+  padding: 8px 16px;
+}

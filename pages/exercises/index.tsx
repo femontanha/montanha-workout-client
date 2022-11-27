@@ -1,8 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { useState } from 'react'
-import classNames from 'classnames/bind'  
-import { Container } from '../../components/Container'
+import Button from '../../components/Button'
 import Header from '../../components/Header'
 import { GetStaticProps } from 'next'
 import { IExercise, getExercises } from '../../lib/exercises'
@@ -19,7 +17,11 @@ const ExercisesPage: React.FC<ExercisesPageProps> = (props: ExercisesPageProps) 
       <Head>
         <title>Exercises</title>
       </Head>
-      <Header title="Exercises" />
+      <Header title="Exercises">
+        <Link href="/exercises/create">
+          <Button>Add New</Button>
+        </Link>
+      </Header>
       <div className={styles.page}>
         {props.exercises.map((exercise: IExercise) => (
           <Link key={exercise.id} href={{ pathname: '/exercises/[id]', query: { id: exercise.id } }} as="/exercises/[id]">

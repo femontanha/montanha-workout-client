@@ -1,7 +1,7 @@
 import styles from './Button.module.css'
 
 type Props = {
-  children: JSX.Element
+  children: React.ReactNode
 }
 
 const Button: React.FC<Props> = ({ children }: Props) => (

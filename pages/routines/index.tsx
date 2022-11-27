@@ -24,7 +24,7 @@ const RoutinesPage: React.FC<RoutinesPage> = (props: RoutinesPage) => {
           </p>
           {props.routines.map((r: IRoutine) => (
             <div key={r.name}>
-              <Link className={styles.link} href={{ pathname: '/routine/[name]', query: { name: r.name } }} as="/routine/[name]">
+              <Link className={styles.link} href={{ pathname: '/routines/[name]', query: { name: r.name } }} as="/routines/[name]">
                 {r.name}
               </Link>
             </div>
