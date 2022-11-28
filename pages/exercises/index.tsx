@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Button from '../../components/Button'
 import Header from '../../components/Header'
-import { GetStaticProps } from 'next'
+import { GetServerSideProps } from 'next'
 import { IExercise, getExercises } from '../../lib/exercises'
 
 import styles from './ExercisesPage.module.css'
@@ -42,13 +42,12 @@ const ExercisesPage: React.FC<ExercisesPageProps> = (props: ExercisesPageProps) 
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const exercises = await getExercises();
   return {
     props: {
       exercises
     },
-    revalidate: 5,
   }
 }
 
