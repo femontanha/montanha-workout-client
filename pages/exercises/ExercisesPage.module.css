@@ -8,6 +8,7 @@
   font-size: 14px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .itemInfoLeft,
@@ -22,6 +23,7 @@
 .name,
 .type,
 .volume,
+.weight,
 .status {
   margin: 8px 0;
 }

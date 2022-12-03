@@ -29,6 +29,7 @@ const ExercisesPage: React.FC<ExercisesPageProps> = (props: ExercisesPageProps) 
               <div className={styles.itemInfoLeft}>
                 <p className={styles.name}>{exercise.name}</p>
                 <p className={styles.type}>{exercise.type}</p>
+                <p className={styles.weight}>{exercise.weight} {exercise.unit}</p>
               </div>
               <div className={styles.itemInfoRight}>
                 <p className={styles.volume}>{exercise.sets} x {exercise.reps}</p>
